@@ -715,8 +715,8 @@ def ComfyNode(
     debug: bool = False,
     color: str = None,
     bg_color: str = None,
-    height: int = None,
     width: int = None,
+    height: int = None,
 ):
     """
     Decorator function for creating ComfyUI nodes.
@@ -735,8 +735,8 @@ def ComfyNode(
         debug (bool): Indicates whether to enable debug logging for this node.
         color (str): The color of the node.
         bg_color (str): The background color of the node.
-        height (int): The default height of the node.
         width (int): The default width of the node.
+        height (int): The default height of the node.
 
     Returns:
         A callable used that can be used with a function to create a ComfyUI node.
@@ -969,8 +969,8 @@ def ComfyNode(
             is_changed=wrapped_is_changed,
             color=color,
             bg_color=bg_color,
-            height=height,
             width=width,
+            height=height,
             debug=debug,
             source_location=source_location,
             easy_nodes_config=curr_config,
@@ -1145,8 +1145,8 @@ def _create_comfy_node(
     is_changed=None,
     color=None,
     bg_color=None,
-    height=None,
     width=None,
+    height=None,
     source_location=None,
     debug=False,
     easy_nodes_config: EasyNodesConfig=None,
@@ -1164,11 +1164,11 @@ def _create_comfy_node(
         _ = hex_to_color(bg_color)  # Check that it's a valid color
         node_info["bgColor"] = bg_color
 
-    if height is not None:
-        node_info["height"] = height
-
     if width is not None:
         node_info["width"] = width
+
+    if height is not None:
+        node_info["height"] = height
 
     if source_location is not None:
         node_info["sourceLocation"] = source_location
